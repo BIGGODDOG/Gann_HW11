@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Список продаж</h2>
+<a href="{% url 'add_sale' %}">Добавить новую продажу</a>
+<ul>
+    {% for sale in sales %}
+        <li>
+            Покупатель: {{ sale.customer.name }} | Продавец: {{ sale.seller.name }} | Товар: {{ sale.product.name }} | Сумма: {{ sale.amount }}
+            <a href="{% url 'edit_sale' sale.id %}">Редактировать</a>
+            <form action="{% url 'delete_sale' sale.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Удалить</button>
+            </form>
+        </li>
+    {% empty %}
+        <li>Нет продаж в списке.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

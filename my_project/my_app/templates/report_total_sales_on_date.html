@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Общая сумма продаж за {{ sale_date }}</h2>
+<p>Сумма: {{ total_sales }}</p>
+<a href="{% url 'reports' %}">Назад к отчётам</a>
+{% endblock %}

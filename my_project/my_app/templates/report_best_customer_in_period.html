@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Лучший покупатель за указанный период</h2>
+
+{% if best_customer %}
+    <h3>Покупатель: {{ best_customer.customer.name }}</h3>
+    <p>Общая сумма покупок: {{ best_customer.total_amount }}</p>
+    <p>Количество покупок: {{ best_customer.total_purchases }}</p>
+{% else %}
+    <p>Нет данных о покупках за указанный период.</p>
+{% endif %}
+
+<a href="{% url 'base' %}">Назад</a>
+{% endblock %}

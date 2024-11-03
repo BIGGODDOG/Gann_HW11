@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Отчёты</h2>
+<ul>
+    <li><a href="{% url 'report_customers_of_seller' %}">Покупатели определённого продавца</a></li>
+    <li><a href="{% url 'report_sales_on_date' %}">Продажи на заданную дату</a></li>
+    <li><a href="{% url 'report_sellers_of_product' %}">Продавцы, продавшие указанный товар</a></li>
+    <li><a href="{% url 'report_customers_of_product' %}">Покупатели, купившие указанный товар</a></li>
+    <li><a href="{% url 'report_total_sales_on_date' %}">Общая сумма продаж на дату</a></li>
+    <li><a href="{% url 'report_most_sold_product' %}">Самый продаваемый товар</a></li>
+    <li><a href="{% url 'report_best_seller' %}">Лучший продавец</a></li>
+    <li><a href="{% url 'report_best_customer' %}">Лучший покупатель</a></li>
+</ul>
+{% endblock %}

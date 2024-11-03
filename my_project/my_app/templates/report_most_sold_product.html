@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Самый продаваемый товар</h2>
+{% if product %}
+    <p>Товар: {{ product.name }}</p>
+    <p>Количество продаж: {{ product.sales_count }}</p>
+{% else %}
+    <p>Нет данных о продажах.</p>
+{% endif %}
+<a href="{% url 'reports' %}">Назад к отчётам</a>
+{% endblock %}

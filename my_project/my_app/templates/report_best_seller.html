@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Лучший продавец</h2>
+{% if seller %}
+    <p>Продавец: {{ seller.name }}</p>
+    <p>Сумма продаж: {{ seller.total_sales }}</p>
+{% else %}
+    <p>Нет данных о продажах.</p>
+{% endif %}
+<a href="{% url 'reports' %}">Назад к отчётам</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Удалить продавца</h2>
+<p>Вы уверены, что хотите удалить продавца "{{ seller.name }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+</form>
+<a href="{% url 'seller_list' %}">Назад</a>
+{% endblock %}

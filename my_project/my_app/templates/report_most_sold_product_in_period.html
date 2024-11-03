@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Самый продаваемый товар за указанный период</h2>
+
+{% if most_sold_product %}
+    <h3>Товар: {{ most_sold_product.product.name }}</h3>
+    <p>Количество проданных: {{ most_sold_product.total_sales }}</p>
+    <p>Общая сумма продаж: {{ most_sold_product.total_amount }}</p>
+{% else %}
+    <p>Нет данных о продажах за указанный период.</p>
+{% endif %}
+
+<a href="{% url 'base' %}">Назад</a>
+{% endblock %}

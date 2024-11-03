@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Продажи за {{ sale_date }}</h2>
+<ul>
+    {% for sale in sales %}
+        <li>
+            Покупатель: {{ sale.customer.name }} <br>
+            Продавец: {{ sale.seller.name }} <br>
+            Товар: {{ sale.product.name }} <br>
+            Сумма: {{ sale.amount }}
+        </li>
+    {% empty %}
+        <li>Нет продаж за указанную дату.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'reports' %}">Назад к отчётам</a>
+{% endblock %}

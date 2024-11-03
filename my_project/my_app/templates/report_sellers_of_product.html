@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Продавцы, продавшие товар "{{ product.name }}"</h2>
+<ul>
+    {% for seller in sellers %}
+        <li>{{ seller.name }} - {{ seller.email }}</li>
+    {% empty %}
+        <li>Нет продавцов, продавших этот товар.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'reports' %}">Назад к отчётам</a>
+{% endblock %}
